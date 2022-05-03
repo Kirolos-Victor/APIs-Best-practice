@@ -17,7 +17,6 @@ class ListController extends Controller
     public function index(IndexListRequest $request, CheckTimezone $checkTimezone)
     {
         $checkTimezone->execute($request);
-
         $data = UserList::paginate(10);
         return responseJson(200, 'success', $data);
     }
